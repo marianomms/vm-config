@@ -30,7 +30,8 @@ Configuration for VM
     ``` 
 
 ## Interesting Link
-1. Editing your `/etc/hosts file, to use from local the VM:
+1. VM Guide: https://github.com/Sage/s1_documentation/blob/master/development_environment/setup.md
+2. Editing your `/etc/hosts file, to use from local the VM:
     https://github.com/Sage/s1_documentation/blob/master/development_environment/experimental/network_setup.md#editing-your-etchosts-file
-2. Using iterm2 as VM terminal using `tmux`
+3. Using iterm2 as VM terminal using `tmux`
     https://github.com/Sage/s1_documentation/blob/master/development_environment/experimental/tmux-control-mode.md#using-iterm2-as-your-peppermint-terminal
