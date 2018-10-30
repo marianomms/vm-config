@@ -18,10 +18,16 @@ Configuration for VM
     * Install plugins from the console:
       `vim +PluginInstall +qall`
 5. Complete the `YouCompleteMe` installation:
+    #### Mac OS X
     ```
     cd ~/.vim/bundle/YouCompleteMe
     ./install.py
     ```
+    #### Ubuntu 
+    ```
+    cd ~/.vim/bundle/YouCompleteMe
+    python3 install.py
+    ``` 
 
 ## Interesting Link
 1. Editing your `/etc/hosts file, to use from local the VM:
