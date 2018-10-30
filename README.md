@@ -13,8 +13,9 @@ Configuration for VM
     `sudo apt install build-essential cmake python3-dev`    
 
 4. Install plugins:
-    a. Once `vim` is opened run `:PluginInstall` to install all the plugins. The first time that `vim` is opened (before install the plugins) and `No Color Scheme found` error is shown, ignore it.
-    b. Install plugins from the console:
+
+    * Once `vim` is opened run `:PluginInstall` to install all the plugins. The first time that `vim` is opened (before install the plugins) and `No Color Scheme found` error is shown, ignore it.
+    * Install plugins from the console:
       `vim +PluginInstall +qall`
 5. Complete the `YouCompleteMe` installation:
     ```
