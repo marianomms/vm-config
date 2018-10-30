@@ -1,0 +1,8 @@
+set autolist
+set filesc
+export EDITOR=vim
+export VISUAL=vim
+
+alias grep='grep --color=auto'
+alias clear_vim='rm -f ~/.vim/tmp/*'
+
