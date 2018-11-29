@@ -35,5 +35,7 @@ Configuration for VM
     https://github.com/Sage/s1_documentation/blob/master/development_environment/experimental/network_setup.md#editing-your-etchosts-file
 3. Using iterm2 as VM terminal using `tmux`
     https://github.com/Sage/s1_documentation/blob/master/development_environment/experimental/tmux-control-mode.md#using-iterm2-as-your-peppermint-terminal
+4. Configure internal network between mac and VM to use a fix IP
+    https://gist.github.com/wacko/5577187#gistcomment-2101321
     
 -  The mysql config in vm is (port: 3322): https://github.com/Sage/s1_gac_addons_test/blob/master/config/global/common.env#L8
