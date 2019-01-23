@@ -11,12 +11,9 @@ Configuration for VM
     `brew install cmake`
     #### Ubuntu 
     `sudo apt install build-essential cmake python3-dev`    
+    
+4. Placed in the folder `scripts` run the file `install_ubuntu.sh`
 
-4. Install plugins:
-
-    * Once `vim` is opened run `:PluginInstall` to install all the plugins. The first time that `vim` is opened (before install the plugins) and `No Color Scheme found` error is shown, ignore it.
-    * Install plugins from the console:
-      `vim +PluginInstall +qall`
 5. Complete the `YouCompleteMe` installation:
     #### Mac OS X
     ```
