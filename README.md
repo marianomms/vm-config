@@ -12,7 +12,7 @@ Configuration for VM
     #### Ubuntu 
     `sudo apt install build-essential cmake python3-dev`    
     
-4. Placed in the folder `scripts` run the file `install_ubuntu.sh`
+4. Placed in the folder `scripts` run the file `./install_ubuntu.sh` ([see](https://github.com/marianomms/vm-config/blob/master/scripts/install_ubuntu.sh))
 
 5. Complete the `YouCompleteMe` installation:
     #### Mac OS X
