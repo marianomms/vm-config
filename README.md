@@ -25,7 +25,21 @@ Configuration for VM
     cd ~/.vim/bundle/YouCompleteMe
     python3 install.py
     ``` 
+6. Configuring a fix IP to allow easily access using ssh:
+    ```
+    # At the end of the file add....
+    $ sudo vim /etc/network/interfaces
+    # Local Interface (for SSH)
+    auto enp0s8
+    iface enp0s8 inet static
+    address 192.168.56.10
+    netmask 255.255.255.0
+    ```
 
+    ```
+    $ sudo ifup enp0s8
+    ```
+    
 ## Interesting Link
 1. VM Guide: https://github.com/Sage/s1_documentation/blob/master/development_environment/setup.md
 2. Editing your `/etc/hosts` file, to use from local the VM:
