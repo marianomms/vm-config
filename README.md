@@ -40,6 +40,8 @@ Configuration for VM
     $ sudo ifup enp0s8
     ```
     
+    Restart the virtual machine.
+    
 ## Interesting Link
 1. VM Guide: https://github.com/Sage/s1_documentation/blob/master/development_environment/setup.md
 2. Editing your `/etc/hosts` file, to use from local the VM:
