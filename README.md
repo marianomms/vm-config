@@ -12,6 +12,11 @@ Configuration for VM
     #### Ubuntu 
     `sudo apt install build-essential cmake python3-dev`    
     
+    Install plugins manually:
+    * Once `vim` is opened run `:PluginInstall` to install all the plugins. The first time that `vim` is opened (before install the plugins) and `No Color Scheme found` error is shown, ignore it.
+    * Install plugins from the console:
+      `vim +PluginInstall +qall`
+      
 4. Placed in the folder `scripts` run the file `./install_ubuntu.sh` ([see](https://github.com/marianomms/vm-config/blob/master/scripts/install_ubuntu.sh))
 
 5. Complete the `YouCompleteMe` installation:
