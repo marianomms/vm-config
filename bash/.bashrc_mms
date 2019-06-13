@@ -5,4 +5,4 @@ export VISUAL=vim
 
 alias grep='grep --color=auto'
 alias clear_vim='rm -f ~/.vim/tmp/*'
-
+alias docker_rm='docker rm $(docker ps -a -q)'
