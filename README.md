@@ -46,7 +46,13 @@ Configuration for VM
     ```
     
     Restart the virtual machine.
-    
+## Adding Umbrella certificate to VM
+```
+sudo mkdir /usr/local/share/ca-certificates/extra
+sudo cp root.cert.pem /usr/local/share/ca-certificates/extra/root.cert.crt
+sudo update-ca-certificates
+```
+
 ## Interesting Link
 1. VM Guide: https://github.com/Sage/s1_documentation/blob/master/development_environment/setup.md
 2. Editing your `/etc/hosts` file, to use from local the VM:
