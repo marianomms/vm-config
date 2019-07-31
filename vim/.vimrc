@@ -10,7 +10,10 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe'
+" Choose autocomplete plugin
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'zxqfl/tabnine-vim'
+
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
