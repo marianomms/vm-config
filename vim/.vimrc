@@ -164,7 +164,8 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_ruby_checkers = ['rubocop', 'mri', 'flog']
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exec = '~/sites/gac/s1_gac_ui/node_modules/.bin/eslint'
+" Not needed we have to configure manually eslint
+" let g:syntastic_javascript_eslint_exec = '~/sites/gac/s1_gac_ui/node_modules/.bin/eslint'
 
 " Get yankring out of the way
 let g:yankring_history_dir = '~/.vim/tmp'
