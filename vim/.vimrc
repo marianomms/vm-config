@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'Valloric/YouCompleteMe'
 Plugin 'zxqfl/tabnine-vim'
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'               
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
@@ -23,6 +23,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()            " required
 " END: Config Vundler
