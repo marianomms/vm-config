@@ -24,6 +24,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'pangloss/vim-javascript'
+Plugin 'maxmellon/vim-jsx-pretty'
 
 call vundle#end()            " required
 " END: Config Vundler
