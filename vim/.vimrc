@@ -1,40 +1,40 @@
 set nocompatible          "not compatible with vi
 
-" START: Config Vundler
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" Automatic installation for vim-plug
+" https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" START: vim-plug configuration
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+" Autocomplete plugin
+Plug 'zxqfl/tabnine-vim'
 
-" Choose autocomplete plugin
-" Plugin 'Valloric/YouCompleteMe'
-Plugin 'zxqfl/tabnine-vim'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-syntastic/syntastic'
+Plug 'vim-airline/vim-airline'
+Plug 'kchmck/vim-coffee-script'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'flazz/vim-colorschemes'
+Plug 'airblade/vim-gitgutter'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'ryanoasis/vim-webdevicons'
 
-Plugin 'kien/ctrlp.vim'               
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'vim-airline/vim-airline'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'pangloss/vim-javascript'
-Plugin 'maxmellon/vim-jsx-pretty'
-
-call vundle#end()            " required
-" END: Config Vundler
+call plug#end()
+" END: vim-plug configuration
 
 set incsearch             "Incremental search
 set hlsearch
 syntax on                 "allow colorize filetype and indent it
 set number                "show number lines in files
-filetype plugin indent on "auto indent for filetype
 set t_Co=256              "256 color mode
 colorscheme jellybeans
 
@@ -121,7 +121,6 @@ set ignorecase
 set smartcase
 set sidescrolloff=5
 
-filetype plugin indent on "Detect filetype indentations
 "Custom filetypes
 au BufNewFile,BufRead *.ctp set filetype=html
 au BufNewFile,BufRead *.ui set filetype=ruby
