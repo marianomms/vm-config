@@ -5,21 +5,23 @@ Configuration for VM
 Use the `scripts/install_vim_ubuntu.sh` file to install vim.
 
 ## Configuring a fix IP to allow easily access using ssh:
-    ```
-    # At the end of the file add....
-    $ sudo vim /etc/network/interfaces
-    # Local Interface (for SSH)
-    auto enp0s8
-    iface enp0s8 inet static
-    address 192.168.56.10
-    netmask 255.255.255.0
-    ```
+```
+# At the end of the file add....
+$ sudo vim /etc/network/interfaces
+```
+```
+# Local Interface (for SSH)
+auto enp0s8
+iface enp0s8 inet static
+address 192.168.56.10
+netmask 255.255.255.0
+```
 
-    ```
-    $ sudo ifup enp0s8
-    ```
-    
-    Restart the virtual machine.
+```
+$ sudo ifup enp0s8
+```
+
+Restart the virtual machine.
 ## Adding Umbrella certificate to VM
 ```
 sudo mkdir /usr/local/share/ca-certificates/extra
