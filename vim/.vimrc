@@ -26,7 +26,6 @@ Plug 'flazz/vim-colorschemes'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
-Plug 'ryanoasis/vim-webdevicons'
 
 call plug#end()
 " END: vim-plug configuration
