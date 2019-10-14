@@ -2,9 +2,12 @@
 Configuration for VM
 
 ## VIM
-Use the `scripts/install_vim_ubuntu.sh` file to install vim.
+* Go to `scripts` folder.
+* Execute the file `install_ubuntu.sh`
+
 
 ## Configuring a fix IP to allow easily access using ssh:
+14/10/2019 This is no required because is done by the `install_ubuntu.sh` file.
 ```
 # At the end of the file add....
 $ sudo vim /etc/network/interfaces
