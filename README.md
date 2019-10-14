@@ -26,6 +26,9 @@ $ sudo ifup enp0s8
 
 Restart the virtual machine.
 ## Adding Umbrella certificate to VM
+* Download the Cisco Umbrella certificate in the VM: https://docs.umbrella.com/deployment-umbrella/docs/rebrand-cisco-certificate-import-information#section-download-the-certificate
+* Open the terminal in the folder where the certificate was downloaded.
+* Run the next commands:
 ```
 sudo mkdir /usr/local/share/ca-certificates/extra
 sudo cp root.cert.pem /usr/local/share/ca-certificates/extra/root.cert.crt
