@@ -8,3 +8,7 @@ Using the .zsh utility [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) if
 PROMPT="%{$fg_bold[yellow]%} [%{$fg_bold[green]%}%D{%f/%m/%y}|%*%{$fg_bold[yellow]%}]"
 PROMPT+=' %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
 ```
+
+Example:
+
+![alt text](https://github.com/marianomms/vm-config/blob/master/assets/oh_my_zsh_prompt.png)
