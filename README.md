@@ -5,6 +5,25 @@ Configuration for VM
 * Go to `scripts` folder.
 * Execute the file `install_ubuntu.sh`
 
+## How to use SSHFS to Mount Remote Directories over SSH
+Based in https://linuxize.com/post/how-to-use-sshfs-to-mount-remote-directories-over-ssh
+
+1. Installing SSHFS on macOS
+```
+brew cask install osxfuse
+brew install sshfs
+```
+
+2. Create the folder in mac where the remote ssh will be mount:
+```
+mkdir ~/sites
+mkdir ~/sites/vm-development
+```
+
+3. Mounting the Remote File System, once the folder `sites` is created in the VM
+```
+sshfs developer@192.168.56.10:/home/developer/sites /Users/mariano.martin/sites/vm-development
+```
 
 ## Configuring a fix IP to allow easily access using ssh:
 14/10/2019 This is no required because is done by the `install_ubuntu.sh` file.
