@@ -6,7 +6,7 @@ Configuration for VM
 * Execute the file `install_ubuntu.sh`
 
 ## How to use SSHFS to Mount Remote Directories over SSH
-Based in https://linuxize.com/post/how-to-use-sshfs-to-mount-remote-directories-over-ssh
+Based in https://linuxize.com/post/how-to-use-sshfs-to-mount-remote-directories-over-ssh/#installing-sshfs-on-macos
 
 1. Installing SSHFS on macOS
 ```
