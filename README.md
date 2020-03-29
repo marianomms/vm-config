@@ -59,6 +59,15 @@ sudo mkdir /usr/local/share/ca-certificates/extra
 sudo cp Cisco_Umbrella_Root_CA.cer /usr/local/share/ca-certificates/extra/Cisco_Umbrella_Root_CA.crt
 sudo update-ca-certificates
 ```
+## Useful alias for MAC:
+#### For mount in local mac the `sites` folder in the VM. (Configuration: [check this](#how-to-use-sshfs-to-mount-remote-directories-over-ssh))
+```
+mount_vm='sshfs developer@192.168.56.10:/home/developer/sites /Users/mariano.martin/sites/vm-development'
+```
+#### Connecting to VM using ssh
+```
+ssh_vm_docker='ssh developer@192.168.56.10'
+```
 
 ## Interesting Link
 1. VM Guide: https://github.com/Sage/s1_documentation/blob/master/development_environment/setup.md
