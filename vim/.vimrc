@@ -76,7 +76,13 @@ highlight ColorColumn ctermbg=235 guibg=#2c2d27
 :let mapleader = ","
 
 function AddDebug()
-  execute "normal Orequire 'pry'; binding.pry;\<Esc>"
+  if &filetype == 'javascript'
+    execute "normal Odebugger;\<Esc>"
+  elseif &filetype == 'ruby'
+    execute "normal Orequire 'pry'; binding.pry;\<Esc>"
+  else
+    execute "normal Odebugger word not defined for " . &filetype . ". Check .vimrc file\<Esc>"
+  endif
 endfunction
 map <leader>b :call AddDebug()<cr>
 
