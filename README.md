@@ -29,6 +29,9 @@ sshfs developer@192.168.56.10:/home/developer/sites /Users/mariano.martin/sites/
 ```
 umount /Users/mariano.martin/sites/vm-development
 ```
+```
+diskutil unmount force /Users/mariano.martin/sites/vm-development
+```
 
 ## Configuring a fix IP to allow easily access using ssh:
 14/10/2019 This is no required because is done by the `install_ubuntu.sh` file.
