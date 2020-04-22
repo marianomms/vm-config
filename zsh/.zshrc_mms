@@ -1,8 +1,13 @@
-# Example aliases
+export TERM=xterm-256color
+
+export EDITOR=vim
+export VISUAL=vim
+
+alias grep='grep --color=auto'
 alias clear_vim='rm -f ~/.vim/tmp/*'
 alias clear_history='echo "" > ~/.zsh_history & exec $SHELL -l'
 # alias ssh_vm_docker='mount_vm && ssh developer@192.168.56.10'
-alias ssh_vm_docker='ssh -L 9229:localhost:9229 developer@192.168.56.10'
+# alias ssh_vm_docker='ssh -L 9229:localhost:9229 developer@192.168.56.10'
 alias push_tmp_github='. ~/.push_tmp_github.sh'
 alias mount_vm='sshfs developer@192.168.56.10:/home/developer/sites /Users/mariano.martin/sites/vm-development'
 
@@ -13,16 +18,25 @@ alias docker_rm='docker rm $(docker ps -a -q)'
 alias portainer='docker run --rm --label service=portainer -p 9000:9000 --name portainer -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/portainer:/data portainer/portainer -l service=portainer --no-auth'
 
 
+export PATH="/home/developer/.rbenv/shims:/home/developer/.nvm/versions/node/v10.15.0/bin:/home/developer/.rbenv/bin:/home/developer/.rbenv/shims:/home/developer/.local/bin:/home/developer/git-secrets:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+eval "$(rbenv init -)"
+
 # ~/.oh-my-zsh/theme/robbyrussell.zsh-theme
 # PROMPT="%{$fg_bold[orange]%} [%{$fg_bold[green]%}%D{%f/%m/%y}|%*%{$fg_bold[yellow]%}]"
 # PROMPT+=' %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
 # ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}(%{$fg[red]%}"
 
-# Using in the VM
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# ~/.oh-my-zsh/theme/agnoster.zsh-theme
+prompt_context(){}
+prompt_context() {
+  # Custom (Random emoji)
+  emojis=("💩" "🤡" "👹" "👺" "👻" "👽" "👾" "🤖" "🙈" "🙉" "🙊" "💃" "🍺" "🍻" "🥂" "🥃" "🍸" "🏟 " "🎱")
+  RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1))
+  prompt_segment black default "${emojis[$RAND_EMOJI_N]}"
+}
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+# Using in the VM
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Using in mac installed with brew
