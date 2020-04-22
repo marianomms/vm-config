@@ -85,6 +85,8 @@ function AddDebug()
   endif
 endfunction
 map <leader>b :call AddDebug()<cr>
+" allow toggle comment using gc<space>
+map gc<space> <plug>NERDCommenterToggle
 
 :command WQ wq
 :command Wq wq

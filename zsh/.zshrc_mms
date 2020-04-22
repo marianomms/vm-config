@@ -1,21 +1,39 @@
 # Example aliases
 alias clear_vim='rm -f ~/.vim/tmp/*'
+alias clear_history='echo "" > ~/.zsh_history & exec $SHELL -l'
 # alias ssh_vm_docker='mount_vm && ssh developer@192.168.56.10'
 alias ssh_vm_docker='ssh -L 9229:localhost:9229 developer@192.168.56.10'
 alias push_tmp_github='. ~/.push_tmp_github.sh'
 alias mount_vm='sshfs developer@192.168.56.10:/home/developer/sites /Users/mariano.martin/sites/vm-development'
 
+alias docker_stats='docker stats $(docker ps --format={{.Names}})'
+alias aws_login='$(aws ecr get-login --no-include-email)'
+alias docker_stop='docker stop $(docker ps -a -q)'
+alias docker_rm='docker rm $(docker ps -a -q)'
+alias portainer='docker run --rm --label service=portainer -p 9000:9000 --name portainer -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/portainer:/data portainer/portainer -l service=portainer --no-auth'
+
+
 # ~/.oh-my-zsh/theme/robbyrussell.zsh-theme
-PROMPT="%{$fg_bold[orange]%} [%{$fg_bold[green]%}%D{%f/%m/%y}|%*%{$fg_bold[yellow]%}]"
-PROMPT+=' %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}(%{$fg[red]%}"
+# PROMPT="%{$fg_bold[orange]%} [%{$fg_bold[green]%}%D{%f/%m/%y}|%*%{$fg_bold[yellow]%}]"
+# PROMPT+=' %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
+# ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}(%{$fg[red]%}"
+
+# Using in the VM
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Using in mac installed with brew
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Starting docker-machine to use it in macos
 # Because I'm using the brew install instead of the desktop docker
 # https://medium.com/@yutafujii_59175/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3
-echo
-echo Verifing docker configuration
-docker-machine env default
-eval $(docker-machine env default)
-docker ps
-echo
+# echo
+# echo Verifing docker configuration
+# docker-machine env default
+# eval $(docker-machine env default)
+# echo
