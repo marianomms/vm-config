@@ -65,11 +65,15 @@ sudo update-ca-certificates
 ## Useful alias for MAC:
 #### For mount in local mac the `sites` folder in the VM. (Configuration: [check this](#how-to-use-sshfs-to-mount-remote-directories-over-ssh))
 ```
-mount_vm='sshfs developer@192.168.56.10:/home/developer/sites /Users/mariano.martin/sites/vm-development'
+ssh_mount_vm='sshfs developer@192.168.56.10:/home/developer/sites /Users/mariano.martin/sites/vm-development'
 ```
 #### Connecting to VM using ssh
 ```
 ssh_vm_docker='ssh developer@192.168.56.10'
+```
+#### Connecting to VM ussing a ssh tunnel in port 9229 (enable remove debug in `s1_gac_ui`)
+```
+alias ssh_tunnel_vm='ssh -L 9229:localhost:9229 developer@192.168.56.10'
 ```
 
 ## Interesting Link
