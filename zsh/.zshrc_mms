@@ -20,6 +20,7 @@ alias portainer='docker run --rm --label service=portainer -p 9000:9000 --name p
 
 
 export PATH="/home/developer/.rbenv/shims:/home/developer/.nvm/versions/node/v10.15.0/bin:/home/developer/.rbenv/bin:/home/developer/.rbenv/shims:/home/developer/.local/bin:/home/developer/git-secrets:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="./node_modules/.bin/:$PATH"
 eval "$(rbenv init -)"
 
 # ~/.oh-my-zsh/theme/robbyrussell.zsh-theme
