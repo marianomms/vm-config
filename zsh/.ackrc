@@ -1,0 +1,2 @@
+--type-set=ts:ext:ts,tsx
+--type-set=js:ext:js,jsx
