@@ -6,8 +6,9 @@ export VISUAL=vim
 alias grep='grep --color=auto'
 alias clear_vim='rm -f ~/.vim/tmp/*'
 alias clear_history='echo "" > ~/.zsh_history & exec $SHELL -l'
-alias push_tmp_github='. ~/.push_tmp_github.sh'
 
+alias push_tmp_github='. ~/.push_tmp_github.sh'
+alias start_vm='VBoxManage startvm "s1_development_environment-2-6-1 (zsh)" --type headless'
 alias ssh_vm_docker='ssh developer@192.168.56.10'
 alias ssh_mount_vm='sshfs developer@192.168.56.10:/home/developer/sites /Users/mariano.martin/sites/vm-development'
 alias ssh_tunnel_vm='ssh -L 9229:localhost:9229 developer@192.168.56.10'
