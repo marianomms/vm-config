@@ -19,6 +19,7 @@ alias aws_login='$(aws ecr get-login --no-include-email)'
 alias docker_stop='docker stop $(docker ps -a -q)'
 alias docker_rm='docker rm $(docker ps -a -q)'
 alias portainer='docker run --rm --label service=portainer -p 9000:9000 --name portainer -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/portainer:/data portainer/portainer -l service=portainer --no-auth'
+alias wtf_git='git reset --hard && git clean -xdf'
 
 alias start_kibana_sbc_hub='docker run --rm -d --link sbc.core.orghub.service.elasticsearch:elasticsearch --network sbccoreorghubapp_default -p 5601:5601 docker.elastic.co/kibana/kibana:7.9.2'
 
