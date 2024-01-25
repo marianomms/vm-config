@@ -12,7 +12,7 @@ endif
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 " Autocomplete plugin
-Plug 'zxqfl/tabnine-vim'
+" Plug 'zxqfl/tabnine-vim'
 
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
