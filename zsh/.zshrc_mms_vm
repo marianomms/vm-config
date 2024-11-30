@@ -1,0 +1,25 @@
+alias vm_start='VBoxManage startvm "s1_development_environment-2-6-1 (zsh)" --type headless'
+alias ssh_vm_docker='ssh developer@192.168.56.10'
+alias ssh_mount_vm='sshfs developer@192.168.56.10:/home/developer/sites /Users/mariano.martin/sites/vm-development'
+alias ssh_unmount_vm='diskutil unmount force /Users/mariano.martin/sites/vm-development'
+alias ssh_tunnel_vm='ssh -L 9229:localhost:9229 developer@192.168.56.10'
+alias aws_login='$(aws ecr get-login --no-include-email)'
+alias start_kibana_sbc_hub='docker run --rm -d --link sbc.core.orghub.service.elasticsearch:elasticsearch --network sbccoreorghubapp_default -p 5601:5601 docker.elastic.co/kibana/kibana:7.9.2'
+
+export PATH="/home/developer/.rbenv/shims:/home/developer/.nvm/versions/node/v10.15.0/bin:/home/developer/.rbenv/bin:/home/developer/.rbenv/shims:/home/developer/.local/bin:/home/developer/git-secrets:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="./node_modules/.bin/:$PATH"
+
+eval "$(rbenv init -)"
+
+# Using in mac installed with brew
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Starting docker-machine to use it in macos
+# Because I'm using the brew install instead of the desktop docker
+# https://medium.com/@yutafujii_59175/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3
+# echo
+# echo Verifing docker configuration
+# docker-machine env default
+# eval $(docker-machine env default)
+# echo

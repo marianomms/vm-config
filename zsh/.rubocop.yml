@@ -1,5 +1,0 @@
-# Up to date as of v0.54.0
-# See https://github.com/Sage/s1_documentation/blob/master/styleguides/rubocop.md for documentation.
-
-inherit_from:
-  - 'https://raw.githubusercontent.com/sage/s1_linter_config/master/.rubocop.yml'

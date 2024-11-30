@@ -3,30 +3,21 @@ export TERM=xterm-256color
 export EDITOR=vim
 export VISUAL=vim
 
+export LESS="-F -R -X $LESS"
+
 alias grep='grep --color=auto'
 alias clear_vim='rm -f ~/.vim/tmp/*'
 alias clear_history='echo "" > ~/.zsh_history & exec $SHELL -l'
 
 alias push_tmp_github='. ~/.push_tmp_github.sh'
-alias vm_start='VBoxManage startvm "s1_development_environment-2-6-1 (zsh)" --type headless'
-alias ssh_vm_docker='ssh developer@192.168.56.10'
-alias ssh_mount_vm='sshfs developer@192.168.56.10:/home/developer/sites /Users/mariano.martin/sites/vm-development'
-alias ssh_unmount_vm='diskutil unmount force /Users/mariano.martin/sites/vm-development'
-alias ssh_tunnel_vm='ssh -L 9229:localhost:9229 developer@192.168.56.10'
 
 alias docker_stats='docker stats $(docker ps --format={{.Names}})'
-alias aws_login='$(aws ecr get-login --no-include-email)'
 alias docker_stop='docker stop $(docker ps -a -q)'
 alias docker_rm='docker rm $(docker ps -a -q)'
+alias docker_clean='docker system prune --all --volumes && docker volumne rm $(docker volume ls -q)'
 alias portainer='docker run --rm --label service=portainer -p 9000:9000 --name portainer -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/portainer:/data portainer/portainer -l service=portainer --no-auth'
 alias wtf_git='git reset --hard && git clean -xdf'
-
-alias start_kibana_sbc_hub='docker run --rm -d --link sbc.core.orghub.service.elasticsearch:elasticsearch --network sbccoreorghubapp_default -p 5601:5601 docker.elastic.co/kibana/kibana:7.9.2'
-
-export PATH="/home/developer/.rbenv/shims:/home/developer/.nvm/versions/node/v10.15.0/bin:/home/developer/.rbenv/bin:/home/developer/.rbenv/shims:/home/developer/.local/bin:/home/developer/git-secrets:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export PATH="./node_modules/.bin/:$PATH"
-eval "$(rbenv init -)"
-
+alias cat='bat'
 # ~/.oh-my-zsh/theme/robbyrussell.zsh-theme
 # PROMPT="%{$fg_bold[orange]%} [%{$fg_bold[green]%}%D{%f/%m/%y}|%*%{$fg_bold[yellow]%}]"
 # PROMPT+=' %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
