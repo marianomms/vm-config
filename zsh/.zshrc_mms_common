@@ -23,6 +23,7 @@ alias docker_clean='docker system prune --all --volumes && docker volumne rm $(d
 alias portainer='docker run --rm --label service=portainer -p 9000:9000 --name portainer -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/portainer:/data portainer/portainer -l service=portainer --no-auth'
 alias wtf_git='git reset --hard && git clean -xdf'
 alias cat='bat'
+
 # ~/.oh-my-zsh/theme/robbyrussell.zsh-theme
 # PROMPT="%{$fg_bold[orange]%} [%{$fg_bold[green]%}%D{%f/%m/%y}|%*%{$fg_bold[yellow]%}]"
 # PROMPT+=' %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
