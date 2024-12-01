@@ -17,30 +17,16 @@ sudo apt install wget
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
 #########
+## STEP 2
 ## NOTE: Once Oh my zsh is installed:
 ## 1. Close the tab and reopen a new one
 ## 2. Comment the code above this
 ## 3. Uncomment code below this
 ## 4. Run againt this file
 #########
-
-# echo "*** INSTALLING BREW ***"
-# sudo apt-get install build-essential procps curl file git
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-# test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
-# echo
-
-# echo "*** Configuring brew ***"
-# test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-# test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-# echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.zshrc
-# brew install rbenv bat
-
 # echo
 # ./custom_zsh.sh
-# echo 'source ~/.zshrc_mms_common' >> ~/.zshrc
+# rm ~/.zshrc_mms_vm
 # echo
 
 # read -p "user.email for git? " email
@@ -55,8 +41,32 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 #   git config --global user.name "$name"
 # fi
 
+# echo "*** INSTALLING BREW ***"
+# sudo apt-get install build-essential procps curl file git
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# echo
+
+# echo "*** Configuring brew ***"
+# test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+# test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.zshrc
+# echo 'source ~/.zshrc_mms_common' >> ~/.zshrc
+
+#########
+## STEP 3
+## NOTE: Once brew is configured and .zshrc updated
+## 1. Close the tab and reopen a new one
+## 2. Comment the code above this
+## 3. Uncomment code below this
+## 4. Run againt this file
+#########
+
+# echo "*** Install brew formulas ***"
+# brew install rust
+# brew install ruby
+# brew install rbenv bat
+
 # echo "*** Configuring vim ***"
 # brew install vim
 # ./install_vim_ubuntu.sh
 # echo
-
