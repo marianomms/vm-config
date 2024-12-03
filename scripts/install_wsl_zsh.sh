@@ -62,11 +62,11 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 #########
 
 # echo "*** Install brew formulas ***"
+# sudo apt-get install zlib1g zlib1g-dev
 # brew install rust
-# brew install ruby
 # brew install rbenv bat
 
 # echo "*** Configuring vim ***"
-# brew install vim
+# sudo apt-get install vim
 # ./install_vim_ubuntu.sh
 # echo
