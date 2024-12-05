@@ -70,3 +70,15 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 # sudo apt-get install vim
 # ./install_vim_ubuntu.sh
 # echo
+
+#########
+## STEP 4 - Install Docker
+## 1. Go to: https://get.docker.com/
+## 2. sudo usermod -aG docker 'your-user-name'
+## 3. cat /etc/group | grep docker
+## 4. systemctl status docker.service
+## 5. docker versión
+## 6. docker compose version
+## 7. docker run hello-world
+#########
+
