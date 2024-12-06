@@ -24,6 +24,13 @@ alias portainer='docker run --rm --label service=portainer -p 9000:9000 --name p
 alias wtf_git='git reset --hard && git clean -xdf'
 alias cat='bat'
 
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+
 eval "$(rbenv init -)"
 
 # ~/.oh-my-zsh/theme/robbyrussell.zsh-theme

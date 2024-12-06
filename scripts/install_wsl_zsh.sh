@@ -4,7 +4,7 @@
 set -e
 
 echo "*** Installing zsh: Installing zsh package ***"
-sudo apt install zsh
+sudo apt install zsh direnv
 touch ~/.zshrc
 echo
 
@@ -19,6 +19,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 #########
 ## STEP 2
 ## NOTE: Once Oh my zsh is installed:
+## Add on the .zshrc file the plugin "direnv"
 ## 1. Close the tab and reopen a new one
 ## 2. Comment the code above this
 ## 3. Uncomment code below this
