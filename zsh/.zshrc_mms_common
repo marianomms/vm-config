@@ -23,6 +23,7 @@ alias docker_clean='docker system prune --all --volumes && docker volume rm $(do
 alias portainer='docker run --rm --label service=portainer -p 9000:9000 --name portainer -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/portainer:/data portainer/portainer -l service=portainer --no-auth'
 alias wtf_git='git reset --hard && git clean -xdf'
 alias cat='bat'
+alias python_server='python3 -m http.server 8000'
 
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
