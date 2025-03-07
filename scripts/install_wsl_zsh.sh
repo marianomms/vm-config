@@ -19,7 +19,13 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 #########
 ## STEP 2
 ## NOTE: Once Oh my zsh is installed:
-## Add on the .zshrc file the plugin "direnv"
+## Add on the .zshrc file the plugin "direnv", "zsh-syntax-highlighting", "zsh-autosuggestions"
+## plugins=(
+##     # other plugins...
+##     direnv
+##     zsh-syntax-highlighting
+##     zsh-autosuggestions
+## )
 ## 1. Close the tab and reopen a new one
 ## 2. Comment the code above this
 ## 3. Uncomment code below this
@@ -63,6 +69,7 @@ wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - 
 #########
 
 # echo "*** Install brew formulas ***"
+# brew install zsh-syntax-highlighting zsh-autosuggestions
 # sudo apt-get install zlib1g zlib1g-dev
 # brew install rust
 # brew install rbenv bat

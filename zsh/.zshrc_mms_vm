@@ -3,7 +3,6 @@ alias ssh_vm_docker='ssh developer@192.168.56.10'
 alias ssh_mount_vm='sshfs developer@192.168.56.10:/home/developer/sites /Users/mariano.martin/sites/vm-development'
 alias ssh_unmount_vm='diskutil unmount force /Users/mariano.martin/sites/vm-development'
 alias ssh_tunnel_vm='ssh -L 9229:localhost:9229 developer@192.168.56.10'
-alias aws_login='$(aws ecr get-login --no-include-email)'
 alias start_kibana_sbc_hub='docker run --rm -d --link sbc.core.orghub.service.elasticsearch:elasticsearch --network sbccoreorghubapp_default -p 5601:5601 docker.elastic.co/kibana/kibana:7.9.2'
 
 export PATH="/home/developer/.rbenv/shims:/home/developer/.nvm/versions/node/v10.15.0/bin:/home/developer/.rbenv/bin:/home/developer/.rbenv/shims:/home/developer/.local/bin:/home/developer/git-secrets:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"

@@ -22,8 +22,8 @@ alias docker_rm='docker rm $(docker ps -a -q)'
 alias docker_clean='docker system prune --all --volumes && docker volume rm $(docker volume ls -q)'
 alias portainer='docker run --rm --label service=portainer -p 9000:9000 --name portainer -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/portainer:/data portainer/portainer -l service=portainer --no-auth'
 alias wtf_git='git reset --hard && git clean -xdf'
-alias cat='bat'
 alias python_server='python3 -m http.server 8000'
+alias aws_login='aws sso login --no-browser && echo as:; aws sts get-caller-identity'
 
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
@@ -39,7 +39,7 @@ eval "$(rbenv init -)"
 # PROMPT+=' %{$fg[cyan]%}%~%{$reset_color%} $(git_prompt_info)'
 # ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}(%{$fg[red]%}"
 
-# Adding last command time
+# Init - Adding last command time
 function preexec() {
   timer=${timer:-$SECONDS}
 }
@@ -55,47 +55,50 @@ function precmd() {
     unset timer
   fi
 }
-
 autoload -Uz add-zsh-hook
 add-zsh-hook preexec preexec
 add-zsh-hook precmd precmd
+# End - Adding last command time
 
-# ~/.oh-my-zsh/theme/agnoster.zsh-theme
+
+# Init - Adding emoji icon
 prompt_context(){}
 prompt_context() {
   # Custom (Random emoji)
-  emojis=("💩" "🤡" "👹" "👺" "👻" "👽" "👾" "🤖" "🙈" "🙉" "🙊" "💃" "🍺" "🍻" "🥂" "🥃" "🍸" "🏟 " "🎱")
+  emojis=("💩" "🤡" "👹" "👺" "👻" "👽" "👾" "🤖" "🙈" "🙉" "🙊" "💃" "🍺" "🍻" "🥂" "🥃" "🍸" "🏟" "🎱" "⚡️" "🔥" "💀" "👑" "😎" "🐸" "🦄" "🍻" "🚀" "💡" "🎉" "🔑" "🚦" "🌙")
+
   RAND_EMOJI_N=$(( $RANDOM % ${#emojis[@]} + 1))
   prompt_segment black default "${emojis[$RAND_EMOJI_N]}"
 }
+# End - Adding emoji icon
 
 ### Fix slowness of pastes with zsh-syntax-highlighting.zsh
 # https://github.com/zsh-users/zsh-syntax-highlighting/issues/513#issuecomment-545493062
-pasteinit() {
-  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
-  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
-}
+# Maybe now it's fixed... check it
+# pasteinit() {
+#   OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+#   zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+# }
 
-pastefinish() {
-  zle -N self-insert $OLD_SELF_INSERT
-}
-zstyle :bracketed-paste-magic paste-init pasteinit
-zstyle :bracketed-paste-magic paste-finish pastefinish
+# pastefinish() {
+#   zle -N self-insert $OLD_SELF_INSERT
+# }
+# zstyle :bracketed-paste-magic paste-init pasteinit
+# zstyle :bracketed-paste-magic paste-finish pastefinish
 ### Fix slowness of pastes
 
 # Using in the VM
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Using in mac installed with brew
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Using installed with brew
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Starting docker-machine to use it in macos
-# Because I'm using the brew install instead of the desktop docker
-# https://medium.com/@yutafujii_59175/a-complete-one-by-one-guide-to-install-docker-on-your-mac-os-using-homebrew-e818eb4cfc3
-# echo
-# echo Verifing docker configuration
-# docker-machine env default
-# eval $(docker-machine env default)
-# echo
+if [ -f ~/.secrets ]; then
+  if [[ $(uname) == "Darwin" ]]; then
+    export $(grep -v '^#' ~/.secrets | xargs -0)
+  else
+    export $(grep -v '^#' ~/.secrets | xargs -d '\n')
+  fi
+fi
