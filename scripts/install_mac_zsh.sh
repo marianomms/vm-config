@@ -32,7 +32,7 @@ set -e
 ## 4. Run againt this file
 #########
 # echo
-# brew install zsh-syntax-highlighting zsh-autosuggestions
+# brew install zsh-syntax-highlighting zsh-autosuggestions powerlevel10k
 echo
 ./custom_zsh.sh
 rm ~/.zshrc_mms_vm
