@@ -24,6 +24,7 @@ alias portainer='docker run --rm --label service=portainer -p 9000:9000 --name p
 alias wtf_git='git reset --hard && git clean -xdf'
 alias python_server='python3 -m http.server 8000'
 alias aws_login='aws sso login --no-browser && echo as:; aws sts get-caller-identity'
+alias git_fetch_all='git fetch --all --prune --tags --prune-tags --force'
 
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_IGNORE_DUPS
@@ -94,7 +95,6 @@ eval "$(rbenv init -)"
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Using installed with brew
-HOMEBREW_PREFIX=$(brew --prefix)
 source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
