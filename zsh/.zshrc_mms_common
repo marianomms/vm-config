@@ -1,4 +1,5 @@
-export TERM=xterm-256color
+# not needed
+# export TERM=xterm-256color
 
 export EDITOR=vim
 export VISUAL=vim
@@ -23,7 +24,7 @@ alias docker_clean='docker system prune --all --volumes && docker volume rm $(do
 alias portainer='docker run --rm --label service=portainer -p 9000:9000 --name portainer -v /var/run/docker.sock:/var/run/docker.sock -v ~/.config/portainer:/data portainer/portainer -l service=portainer --no-auth'
 alias wtf_git='git reset --hard && git clean -xdf'
 alias python_server='python3 -m http.server 8000'
-alias aws_login='aws sso login --no-browser && echo as:; aws sts get-caller-identity'
+alias aws_login='aws sso login --no-browser && echo as:; aws sts get-caller-identity && echo docker login:; aws ecr get-login-password | docker login --username AWS --password-stdin 522104923602.dkr.ecr.eu-west-1.amazonaws.com'
 alias git_fetch_all='git fetch --all --prune --tags --prune-tags --force'
 
 setopt HIST_EXPIRE_DUPS_FIRST
