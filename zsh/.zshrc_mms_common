@@ -13,7 +13,7 @@ export LESS="-F -R -X $LESS"
 
 alias grep='grep --color=auto'
 alias clear_vim='rm -f ~/.vim/tmp/*'
-alias clear_history='echo "" > ~/.zsh_history & exec $SHELL -l'
+alias clear_history='omz_history -c && rm -f "$HOME/Library/Group Containers/2BBY89MBSN.dev.warp/Library/Application Support/dev.warp.Warp-Stable/warp.sqlite"'
 
 alias push_tmp_github='. ~/.zsh_mms/push_tmp_github.sh'
 alias search_git_changes='. ~/.zsh_mms/search_git_changes.sh'
@@ -97,10 +97,11 @@ eval "$(rbenv init -)"
 # source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Not needed using wrap terminal
 # Using installed with brew
-source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
+# source "$HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# source "$HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+# source "$HOMEBREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme"
 
 if [ -f ~/.secrets ]; then
   if [[ $(uname) == "Darwin" ]]; then
