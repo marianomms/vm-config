@@ -15,7 +15,9 @@ alias grep='grep --color=auto'
 alias clear_vim='rm -f ~/.vim/tmp/*'
 alias clear_history='echo "" > ~/.zsh_history & exec $SHELL -l'
 
-alias push_tmp_github='. ~/.push_tmp_github.sh'
+alias push_tmp_github='. ~/.zsh_mms/push_tmp_github.sh'
+alias search_git_changes='. ~/.zsh_mms/search_git_changes.sh'
+alias cat='bat'
 
 alias docker_stats='docker stats $(docker ps --format={{.Names}})'
 alias docker_stop='docker stop $(docker ps -a -q)'
